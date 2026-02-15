@@ -777,6 +777,23 @@ if ($delete_id && in_array($user_role, ['teacher', 'admin'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
     <title>ระบบสื่อการสอนพัฒนาเกม - Game Development Learning</title>
+    <script>
+        const API_URL = 'https://your-backend-host.com/api.php';
+        
+        async function fetchLessons() {
+            try {
+                const response = await fetch(`${API_URL}?action=get_lessons`);
+                const data = await response.json();
+                displayLessons(data.data);
+            } catch(error) {
+                console.error('Error:', error);
+            }
+        }
+        
+        function displayLessons(lessons) {
+            // แสดงผลบทเรียน
+        }
+    </script>
     
     <!-- เพิ่ม Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
